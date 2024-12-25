@@ -44,6 +44,10 @@
             margin-bottom: 20px;
         }
 
+        h3{
+            color: black;
+        }
+
         .fact {
             background-color: #e6e6fa;
             margin: 20px 0;
@@ -62,7 +66,7 @@
         }
 
         button {
-            background-color: #000080;
+            background-color: var(--button-bg-color);
             color: var(--button-text-color);
             border: none;
             padding: 10px 20px;
@@ -81,6 +85,7 @@
 <body>
     <div class="container">
         <h1>Coding Fun Facts</h1>
+        <h3>Did You Know that......</h3>
         <div id="fact" class="fact"></div>
         <button onclick="showRandomFact()">Show a Fun Fact</button>
     </div>
