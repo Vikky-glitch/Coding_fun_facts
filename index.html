@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Fun Facts</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --background-color: #f4f4f9;
+            --text-color: #333;
+            --container-bg-color: #fff;
+            --button-bg-color: #4CAF50;
+            --button-text-color: #fff;
+            --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition-duration: 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--container-bg-color);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .fact {
+            background-color: var(--list-item-bg-color);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-duration), transform var(--transition-duration);
+        }
+
+        .fact.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        button {
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color var(--transition-duration);
+        }
+
+        button:hover {
+            background-color: darken(var(--button-bg-color), 10%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coding Fun Facts</h1>
+        <div id="fact" class="fact"></div>
+        <button onclick="showRandomFact()">Show a Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Ada Lovelace is considered the first computer programmer. She wrote an algorithm for Charles Babbage's early mechanical general-purpose computer, the Analytical Engine.",
+            "The 'Hello, World!' program is often the first program written by beginners learning a new programming language.",
+            "The term 'bug' in programming was popularized by Grace Hopper when a real moth was found causing issues in a computer.",
+            "The Linux operating system, which is open source, powers over 90% of the world's supercomputers.",
+            "The first computer game, 'Spacewar!', was created in 1962 by Steve Russell and others at MIT.",
+            "As of recent years, JavaScript is one of the most popular programming languages, especially for web development.",
+            "Code golf is a type of recreational computer programming competition where the goal is to achieve the shortest possible source code that implements a certain algorithm.",
+            "GitHub, a platform for version control and collaboration, hosts over 100 million repositories.",
+            "Computers use binary code, which consists of 0s and 1s, to perform operations. This is the most basic form of data representation.",
+            "The first computer virus, called 'Creeper', was detected on ARPANET, the predecessor of the internet, in the early 1970s.",
+            "Many software applications contain hidden features or messages known as 'Easter eggs'.",
+            "The Python programming language is named after the British comedy series 'Monty Python's Flying Circus', not the snake.",
+            "Writing comments in code is crucial for understanding and maintaining it, but some developers have been known to leave humorous comments.",
+            "Before graphical displays were common, programmers used ASCII characters to create images and designs.",
+            "Hackathons are events where programmers collaborate intensively on software projects, often lasting 24 to 48 hours.",
+            "Fortran, developed in the 1950s, was the first high-level programming language.",
+            "Some developers intentionally obfuscate code to make it difficult to understand, often for security purposes.",
+            "The Turing Award is considered the 'Nobel Prize of Computing' and is awarded annually by the Association for Computing Machinery (ACM).",
+            "Reusing code is a common practice in programming, and many developers rely on libraries and frameworks to speed up development.",
+            "There are many platforms and tools designed to teach children how to code, such as Scratch and Code.org, making programming accessible from a young age."
+        ];
+
+        function showRandomFact() {
+            const factElement = document.getElementById('fact');
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factElement.textContent = facts[randomIndex];
+            factElement.classList.add('show');
+        }
+    </script>
+</body>
+</html>
